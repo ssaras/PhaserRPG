@@ -1,3 +1,5 @@
+"use strict"
+
 Game.Preloader = function (game) {
     this.logo = null;
 };
@@ -15,6 +17,8 @@ Game.Preloader.prototype = {
 
         this.load.tilemap("map", _Paths.tilemaps + "Level1.csv");
         this.load.image("tileset", _Paths.tilesets + "spritesheet.png");
+
+        this.load.spritesheet("player", _Paths.tilesets + "tutorial.png", 24, 25);
     },
 
     create: function () {
