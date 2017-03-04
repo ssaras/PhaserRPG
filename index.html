@@ -15,7 +15,8 @@
         var _Paths = {
             images: "/assets/images/",
             tilesets: "/assets/tilesets/",
-            tilemaps: "assets/tilemaps/"
+            tilemaps: "assets/tilemaps/",
+            soundtrack: "assets/audio/soundtrack/"
         }
 
         window.onload = function() {
@@ -25,7 +26,7 @@
             var width = window.innerWidth;
             var height = window.innerHeight;
 
-            var game = new Phaser.Game(640, 320, Phaser.AUTO, ''); // , { preload: preload, create: create }
+            var game = new Phaser.Game(1900, 1000, Phaser.CENTER, ''); // , { preload: preload, create: create }
 
             game.state.add("Boot", Game.Boot);
             game.state.add("Preloader", Game.Preloader);

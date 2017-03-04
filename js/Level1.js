@@ -8,6 +8,8 @@ var controls = {};
 var playerSpeed = 150;
 var jumpTimer = 0;
 
+var music;
+
 Game.Level1.prototype = {
     create: function () {
 
@@ -25,7 +27,11 @@ Game.Level1.prototype = {
 
         map.setCollisionBetween(2,2);
 
-        player = this.add.sprite(0, 140, "player");
+        music = this.add.audio("worldmap");
+
+        music.play();
+
+        player = this.add.sprite(0, 200, "player");
         player.anchor.setTo(0.5, 0.5);
 
         // player.animations.add("idle", [1], 1, true);
