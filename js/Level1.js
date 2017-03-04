@@ -86,7 +86,7 @@ Game.Level1.prototype = {
             player.body.velocity.x -= playerSpeed;
         }
 
-        player.animations.play("idle");
+        // player.animations.play("idle");
 
     }
 };

@@ -15,7 +15,7 @@ Game.Preloader.prototype = {
         this.time.advanceTiming = true;
 
         this.load.setPreloadSprite(this.logo);
-        this.load.tilemap("map", _Paths.tilemaps + "Level2.csv");        
+        this.load.tilemap("map", _Paths.tilemaps + "Area1.csv");        
         this.load.image("tileset", _Paths.tilesets + "spritesheet.png");
         this.load.spritesheet("player", _Paths.tilesets + "tutorial.png", 24, 25);
 
