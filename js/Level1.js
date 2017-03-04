@@ -5,7 +5,7 @@ var layer;
 
 var player;
 var controls = {};
-var playerSpeed = 150;
+var playerSpeed = 175;
 var jumpTimer = 0;
 
 var music;
