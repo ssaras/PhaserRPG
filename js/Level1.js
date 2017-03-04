@@ -5,7 +5,7 @@ var layer;
 
 var player;
 var controls = {};
-var playerSpeed = 50;
+var playerSpeed = 150;
 var jumpTimer = 0;
 
 Game.Level1.prototype = {
@@ -28,6 +28,12 @@ Game.Level1.prototype = {
         player = this.add.sprite(0, 140, "player");
         player.anchor.setTo(0.5, 0.5);
 
+        // player.animations.add("idle", [1], 1, true);
+        // player.animations.add("runUp", [35], 1, true);
+        // player.animations.add("runDown", [1], 1, true);
+        // player.animations.add("runRight", [24], 1, true);
+        // player.animations.add("runLeft", [13], 7, true);
+
         player.animations.add("idle", [0,1], 1, true);
         player.animations.add("jump", [2], 1, true);
         player.animations.add("run", [3,4,5,6,7,8], 7, true);
@@ -37,8 +43,8 @@ Game.Level1.prototype = {
         player.body.collideWorldBounds = true;
 
         controls = {
-            right: this.input.keyboard.addKey(Phaser.Keyboard.A),
-            left: this.input.keyboard.addKey(Phaser.Keyboard.D),
+            right: this.input.keyboard.addKey(Phaser.Keyboard.D),
+            left: this.input.keyboard.addKey(Phaser.Keyboard.A),
             up: this.input.keyboard.addKey(Phaser.Keyboard.W),
             down: this.input.keyboard.addKey(Phaser.Keyboard.S),
         }
@@ -65,14 +71,16 @@ Game.Level1.prototype = {
         if (controls.right.isDown) {
             player.animations.play("run");
             player.scale.setTo(1,1);
+            player.body.velocity.x += playerSpeed;
+        }
+
+        if (controls.left.isDown) {
+            player.animations.play("run");
+            player.scale.setTo(-1,1);
             player.body.velocity.x -= playerSpeed;
         }
 
-        if (controls.left.isUp) {
-            player.animations.play("run");
-            player.scale.setTo(1,1);
-            player.body.velocity.x += playerSpeed;
-        }
+        player.animations.play("idle");
 
     }
 };
