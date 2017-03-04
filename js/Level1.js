@@ -43,10 +43,10 @@ Game.Level1.prototype = {
         player.body.collideWorldBounds = true;
 
         controls = {
-            right: this.input.keyboard.addKey(Phaser.Keyboard.D),
-            left: this.input.keyboard.addKey(Phaser.Keyboard.A),
-            up: this.input.keyboard.addKey(Phaser.Keyboard.W),
-            down: this.input.keyboard.addKey(Phaser.Keyboard.S),
+            right: this.input.keyboard.addKey(Phaser.Keyboard.RIGHT),
+            left: this.input.keyboard.addKey(Phaser.Keyboard.LEFT),
+            up: this.input.keyboard.addKey(Phaser.Keyboard.UP),
+            down: this.input.keyboard.addKey(Phaser.Keyboard.DOWN),
         }
     },
 
