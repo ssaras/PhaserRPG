@@ -1,21 +1,24 @@
 Game.Preloader = function (game) {
-    this.preloadBar = null;
-}
+    this.logo = null;
+};
 
 Game.Preloader.prototype = {
 
     preload: function () {
-        this.preloadBar = this.add.sprite(this.world.centerX,
+        this.logo = this.add.sprite(this.world.centerX,
                                             this.world.centerY,
-                                            "preloaderBar");
+                                            "logo");
 
-        this.preloadBar.anchor.setTo(0.5, 0.5);
+        this.logo.anchor.setTo(0.5, 0.5);
         this.time.advanceTiming = true;
-        this.load.setPreloadSprite(this.preloadBar);;
+        this.load.setPreloadSprite(this.logo);
+
+        this.load.tilemap("map", _Paths.tilemaps + "Level1.csv");
+        this.load.image("tileset", _Paths.tilesets + "spritesheet.png");
     },
 
     create: function () {
         this.state.start("Level1");
     }
 
-}
+};

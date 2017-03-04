@@ -13,10 +13,10 @@ Game.Boot.prototype = {
 
     preload: function () {
         // this.load.image('logo', 'assets/preloader.png');
-        this.load.image('logo', 'assets/images/phaser.png');
+        this.load.image('logo', _Paths.images + 'phaser.png');
     },
 
     create: function () {
         this.state.start("Preloader");
     },
-}
+};

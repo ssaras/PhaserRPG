@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>hello phaser!</title>
+        <title>Simple RPG!</title>
         <script src=" js\Phaser\phaser.js"></script>
         <script src=" js\Boot.js"></script>
         <script src=" js\Preloader.js"></script>
@@ -12,46 +12,40 @@
     <body>
 
     <script type="text/javascript">
+        var _Paths = {
+            images: "/assets/images/",
+            tilesets: "/assets/tilesets/",
+            tilemaps: "assets/tilemaps/"
+        }
 
-    window.onload = function() {
+        window.onload = function() {
 
-        //  Note that this html file is set to pull down Phaser 2.5.0 from the JS Delivr CDN.
-        //  Although it will work fine with this tutorial, it's almost certainly not the most current version.
-        //  Be sure to replace it with an updated version before you start experimenting with adding your own code.
 
-        var width = window.innerWidth;
-        var height = window.innerHeight;
 
-        var game = new Phaser.Game(width, height, Phaser.AUTO, ''); // , { preload: preload, create: create }
+            var width = window.innerWidth;
+            var height = window.innerHeight;
 
-        game.state.add("Boot", Game.Boot);
-        game.state.add("Preloader", Game.Preloader);
-        game.state.add("MainMenu", Game.MainMenu);
-        game.state.add("Level1", Game.Level1);
+            var game = new Phaser.Game(800, 600, Phaser.AUTO, ''); // , { preload: preload, create: create }
 
-        game.state.start("Boot");
+            game.state.add("Boot", Game.Boot);
+            game.state.add("Preloader", Game.Preloader);
+            game.state.add("MainMenu", Game.MainMenu);
+            game.state.add("Level1", Game.Level1);
 
-        // function preload () {
-        //     game.load.image('logo', 'assets/images/phaser.png');
-        // }
-        // function create () {
-        //     var logo = game.add.sprite(game.world.centerX, game.world.centerY, 'logo');
-        //     logo.anchor.setTo(0.5, 0.5);
-        // }
-        // function update () {
-        //     // update   
-        // }
+            game.state.start("Boot");
 
-        // var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create });
-        // function preload () {
-        //     game.load.image('logo', 'img/phaser.png');
-        // }
-        // function create () {
-        //     var logo = game.add.sprite(game.world.centerX, game.world.centerY, 'logo');
-        //     logo.anchor.setTo(0.5, 0.5);
-        // }
+            // function preload () {
+            //     game.load.image('logo', 'assets/images/phaser.png');
+            // }
+            // function create () {
+            //     var logo = game.add.sprite(game.world.centerX, game.world.centerY, 'logo');
+            //     logo.anchor.setTo(0.5, 0.5);
+            // }
+            // function update () {
+            //     // update   
+            // }
 
-    };
+        };
 
     </script>
 
