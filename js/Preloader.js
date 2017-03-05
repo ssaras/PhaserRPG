@@ -1,4 +1,4 @@
-"use strict"
+
 
 Game.Preloader = function (game) {
     this.logo = null;
@@ -17,7 +17,8 @@ Game.Preloader.prototype = {
         this.load.setPreloadSprite(this.logo);
         this.load.tilemap("map", _Paths.tilemaps + "Area1.csv");        
         this.load.image("tileset", _Paths.tilesets + "spritesheet.png");
-        this.load.spritesheet("player", _Paths.tilesets + "tutorial.png", 24, 25);
+        this.load.spritesheet("player", _Paths.tilesets + "people.png", 32, 32);
+        // this.load.spritesheet("player", _Paths.tilesets + "tutorial.png", 24, 25);
 
         this.load.audio("worldmap", _Paths.soundtrack + "barret-theme.mp3");
 
